@@ -1,0 +1,17 @@
+{
+    "name": "Reportes Witrace",
+    "engine": "handlebars",
+    "recipe": "chrome-pdf",
+    "shortid": "iE_p3-1T3",
+    "chrome": {
+        "printBackground": true
+    },
+    "creationDate": {
+        "$$date": 1663091624136
+    },
+    "modificationDate": {
+        "$$date": 1663091624136
+    },
+    "_id": "DZLtGpJCSGAXPJae",
+    "$entitySet": "templates"
+}

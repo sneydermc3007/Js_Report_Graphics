@@ -1,0 +1,82 @@
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-3d.js"></script>
+
+<div id="container" style="height: 400px"></div>
+
+<script>
+    $(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'column',
+            },
+    
+            title: {
+                text: 'Viajes exitosos'
+            },
+    
+            xAxis: {
+                categories: ["Bogota", "Rionegro", "Quito"],
+            },
+    
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '% Viajes exitosos'
+                }
+            },
+
+            colors: ['#0ECA4F', '#F6FD0D', '#FD0D0D'],
+
+            tooltip: {
+                headerFormat: '',
+                pointFormat: 'Zona: <b>{point.custom.extraInformacion}</b><br/>',
+                footerFormat: 'Conformidad: {point.y}%<br/>',
+                useHTML: true
+            },
+
+            legend: {
+                verticalAlign: 'bottom' 
+            },
+    
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+    
+            series: [{
+                name: '> 90%',
+                animation: false,
+                data: [
+                    {
+                    y: 80,
+                    custom: { extraInformacion: 'Bogota' },
+                    }
+                ],
+                zones: [{ color: '#F6FD0D' }]
+                }, {
+                name: '80% - 90%',
+                animation: false,
+                data: [
+                    {
+                    y: 90,
+                    custom: { extraInformacion: 'Rionegro' },
+                    }
+                ],
+                zones: [{ color: '#0ECA4F' }]
+                }, {
+                name: '< 80%',
+                animation: false,
+                data: [
+                    {
+                    y: 80,
+                    custom: { extraInformacion: 'Quito' },
+                    }
+                ],
+                zones: [{ color: '#F6FD0D' }]
+            }]
+        });
+    });
+</script>
